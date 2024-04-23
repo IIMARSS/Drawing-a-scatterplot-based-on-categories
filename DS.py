@@ -2,14 +2,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = pd.read_excel(io='F:\code\data\gene\\2_choose.xlsx')
+data = pd.read_excel(io='Use your own data')
 data_name = np.array(data["all-gene_id"])
-data_kongbai = np.array(pd.read_excel(io='F:\code\data\gene\\2_choose.xlsx',
-                                      usecols=(1, 2, 3, 4, 5, 6, 13, 14 ,15, 16, 17, 18,
-                                               25 ,26, 27, 28, 29, 30, 37, 38, 39, 40, 41, 42)))
-data_moxing = np.array(pd.read_excel(io='F:\code\data\gene\\2_choose.xlsx',
-                                     usecols=(7, 8, 9, 10, 11, 12, 19, 20, 21, 22, 23, 24,
-                                              31, 32, 33, 34, 35, 36, 43, 44, 45, 46, 47, 48)))
+data_kongbai = np.array(pd.read_excel(io='Use your own data',
+                                      usecols=()))
+data_moxing = np.array(pd.read_excel(io='Use your own data',
+                                     usecols=()))
 
 k_label = [4, 6, 8, 10]
 m_label = [4.4, 6.4, 8.4, 10.4]
@@ -58,8 +56,8 @@ for i in range(len(data_name)):
     c = min(np.min(data_mean_kongbai), np.min(data_mean_moxing))
     # plt.xlim((2, 12))
     plt.ylim((c-b, a+b))
-    plt.xlabel("Time after infection (days)")
-    plt.ylabel("Gene expression")
+    plt.xlabel("Your data")
+    plt.ylabel("Your data")
     plt.xticks(k_label)
     plt.savefig('F:\code\data\gene\\figure\youxian_{}.png'.format(data_name[i]))
     plt.clf()
